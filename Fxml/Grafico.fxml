@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+
+<!--
+	Archivo FXML encargado de cargar los nodos al stage
+	Los elementos que este FXMl contiene son:
+	1) Boton de inicio
+	2) ChoiseBox para seleccionar el nivel
+	3) Label "INSTRUCCIONES"
+	4) Label que contiene las instrucciones
+	5) Rectangulo Verde
+	6) Rectangulo Rojo
+	7) Rectangulo Amarillo
+	8) Rectangulo Azul
+ -->
+<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+	fx:controller="app.Controllers.Controller" fx:id="gp">
+	<children>
+		<!-- 1) Boton de inicio -->
+		<Button fx:id="bt_Iniciar" onAction="#handleButtonAction" text="Iniciar"
+			AnchorPane.leftAnchor="100" AnchorPane.topAnchor="30" styleClass="bt_iniciar" />
+
+		<!-- 2) ChoiceBox seleccionar nivel -->
+		<ChoiceBox fx:id="level" AnchorPane.leftAnchor="180"
+			styleClass="bt_iniciar" AnchorPane.topAnchor="30" />
+
+		<!-- 3) Label que muestra INSTRUCCIONES -->
+		<Label text="INSTRUCCIONES" styleClass="instrucciones"
+			AnchorPane.topAnchor="10" AnchorPane.leftAnchor="280" />
+
+		<!-- 4) Label Instrucciones -->
+		<Label maxWidth="350" wrapText="true"
+			text="Selecciona el nivel y pulsa el boton iniciar.Los recuadros se van a iluminar en un orden aleatorio. Pulsa la secuencia que se ilumine y el juego seguira hasta que te equivoques."
+			styleClass="instrucciones2" AnchorPane.topAnchor="30"
+			AnchorPane.leftAnchor="280" />
+
+		<!-- 5) Rectangulo verde -->
+		<Rectangle fx:id="rVerde" fill="#0ab916" height="250"
+			width="250" layoutX="100.0" layoutY="100.0" onMouseClicked="#userInput"
+			stroke="BLACK" strokeType="INSIDE" />
+
+		<!-- 6) Rectangulo rojo -->
+		<Rectangle fx:id="rRojo" fill="#ff1f1f" height="250" width="250"
+			layoutX="350.0" layoutY="100.0" onMouseClicked="#userInput" stroke="BLACK"
+			strokeType="INSIDE" />
+
+		<!-- 7) Rectangulo amarillo -->
+		<Rectangle fx:id="rAmarillo" fill="#e8eb23" height="250"
+			width="250" layoutX="100.0" layoutY="350.0" onMouseClicked="#userInput"
+			stroke="BLACK" strokeType="INSIDE" />
+
+		<!-- 8) Rectangulo azul -->
+		<Rectangle fx:id="rAzul" fill="DODGERBLUE" height="250.0"
+			width="250.0" layoutX="350.0" layoutY="350.0" onMouseClicked="#userInput"
+			stroke="BLACK" strokeType="INSIDE" />
+	</children>
+</AnchorPane>
